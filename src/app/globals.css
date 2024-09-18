@@ -2,9 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
+@property --degree {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 10deg;
+}
+
 :root {
   --background: #0a0a0a;
   --foreground: #ededed;
+  --swiper-navigation-size: 22px !important;
 }
 
 body {
@@ -13,20 +20,114 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+.card-profile {
+  padding: 2vw;
+  position: relative;
+  text-align: center;
+  border-radius: 20px;
+}
+
+.card-profile::before {
+  content: "";
+  position: absolute;
+  width: 102%;
+  height: 102%;
+  top: -1%;
+  left: -1%;
+  background: linear-gradient(var(--degree),
+      hsl(252, 100%, 60%) 20%,
+      hsl(222, 100%, 60%) 40%,
+      hsl(202, 100%, 60%) 60%,
+      hsl(240, 100%, 60%) 80%,
+      hsl(248, 100%, 60%) 100%);
+  border-radius: inherit;
+  z-index: -1;
+  animation: spin 3s infinite ease-in-out;
+  will-change: contents;
+}
+
+.card-profile::after {
+  content: "";
+  position: absolute;
+  width: 105%;
+  height: 105%;
+  top: -1%;
+  left: -1%;
+  background: linear-gradient(var(--degree),
+      hsl(252, 100%, 60%) 20%,
+      hsl(222, 100%, 60%) 40%,
+      hsl(202, 100%, 60%) 60%,
+      hsl(240, 100%, 60%) 80%,
+      hsl(248, 100%, 60%) 100%);
+  border-radius: inherit;
+  filter: blur(20px);
+  z-index: -2;
+  animation: spin 3s infinite ease-in-out;
+  will-change: contents;
+}
+
+@keyframes spin {
+  0% {
+    --degree: 0deg;
+  }
+
+  100% {
+    --degree: 360deg;
+  }
+}
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
 }
 
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+.animate-shimmer {
+  background: linear-gradient(to right, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.4) 50%, rgba(255, 255, 255, 0.2) 100%);
+  background-size: 1000px 100%;
+  animation: shimmer 1.5s infinite;
+}
+
 @keyframes spinPause {
-  0% { transform: rotate(0deg); }
-  25% { transform: rotate(0deg); }
-  50% { transform: rotate(360deg); }
-  75% { transform: rotate(0deg); }
-  100% { transform: rotate(0deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+
+  25% {
+    transform: rotate(0deg);
+  }
+
+  50% {
+    transform: rotate(360deg);
+  }
+
+  75% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(0deg);
+  }
 }
 
 .spin-pause {
   animation: spinPause 2s ease-in-out infinite;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  width: calc(var(--swiper-navigation-size) / 44* 27);
+  height: var(--swiper-navigation-size);
+  margin-top: calc(0px -(var(--swiper-navigation-size) / 2));
+  color: white !important;
 }
