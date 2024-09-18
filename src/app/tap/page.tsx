@@ -7,8 +7,11 @@ import energyImg from "@/assets/energy.png";
 import giftImg from "@/assets/components/gift.png";
 import calendarImg from "@/assets/components/calendar.png";
 import coinsImg from "@/assets/components/coin.png";
+import { useRouter } from "next/navigation";
 
 export default function Tap() {
+    const router = useRouter();
+
     return (
         <div className="relative bg-[#0d162e] pb-24 h-screen">
             <div className="flex flex-col h-screen z-50 w-full">
@@ -33,7 +36,7 @@ export default function Tap() {
                         </div>
                     </div>
                     <div className="grid grid-cols-3 gap-x-1.5 my-4">
-                        <div className="flex items-center space-x-2 justify-center rounded-full w-full min-w-fit bg-white/10 p-2">
+                        <div onClick={() => { }} className="cursor-pointer flex items-center space-x-2 justify-center rounded-full w-full min-w-fit bg-white/10 p-2">
                             <div className="w-6 h-6 rounded-full bg-gradient-to-t from-purple-500 to-pink-500 p-0.5">
                                 <Image className="w-full h-full rounded-full" src={calendarImg} alt="" width={100} height={100} />
                             </div>
@@ -41,7 +44,7 @@ export default function Tap() {
                                 <p className="leading-none">Daily</p>
                             </div>
                         </div>
-                        <div className="flex items-center space-x-2 justify-center rounded-full w-full min-w-fit bg-white/10 p-2">
+                        <div onClick={() => { router.push('/task') }} className="cursor-pointer flex items-center space-x-2 justify-center rounded-full w-full min-w-fit bg-white/10 p-2">
                             <div className="w-6 h-6 rounded-full bg-gradient-to-t from-purple-500 to-pink-500 p-0.5">
                                 <Image className="w-full h-full rounded-full" src={coinsImg} alt="" width={100} height={100} />
                             </div>
@@ -49,7 +52,7 @@ export default function Tap() {
                                 <p className="leading-none">Double</p>
                             </div>
                         </div>
-                        <div className="flex items-center space-x-2 justify-center rounded-full w-full min-w-fit bg-white/10 p-2">
+                        <div onClick={() => { router.push('/airdrop') }} className="cursor-pointer flex items-center space-x-2 justify-center rounded-full w-full min-w-fit bg-white/10 p-2">
                             <div className="w-6 h-6 rounded-full bg-gradient-to-t from-purple-500 to-pink-500 p-0.5">
                                 <Image className="w-full h-full rounded-full" src={giftImg} alt="" width={100} height={100} />
                             </div>
