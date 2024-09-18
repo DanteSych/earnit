@@ -10,10 +10,8 @@ export default function Page() {
     return (
         <div className="relative bg-[#0d162e] pb-24 h-screen">
             <div className="flex flex-col h-screen z-50 w-full">
-                <div className="p-5">
-                    <Header />
-                </div>
                 <div className="p-5 h-full flex-grow flex flex-col overflow-y-auto z-50">
+                    <Header />
                     <Image src={aidropImg} alt="" width={500} height={500} />
                     <div className="flex items-center justify-center space-x-2 mb-2">
                         <div>
