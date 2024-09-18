@@ -7,8 +7,10 @@ import calendarImg from "@/assets/components/calendar.png";
 import youtubeImg from "@/assets/socmed/youtube.png";
 import twitterImg from "@/assets/socmed/twitter.png";
 import telegramImg from "@/assets/socmed/telegram.png";
+import { useRouter } from "next/navigation";
 
 export default function Page() {
+    const router = useRouter();
     return (
         <div className="relative bg-[#0d162e] pb-24 h-screen">
             <div className="flex flex-col h-screen z-50 w-full">
@@ -42,7 +44,7 @@ export default function Page() {
                                 <p>Check Daily Reward!</p>
                             </div>
                             <div>
-                                <button className="bg-gradient-to-t from-purple-500 to-pink-500 rounded-full py-2 px-4 text-gray-white">Go</button>
+                                <button onClick={() => { router.push('/daily-reward') }} className="bg-gradient-to-t from-purple-500 to-pink-500 rounded-full py-2 px-4 text-gray-white">Go</button>
                             </div>
                         </div>
                     </div>

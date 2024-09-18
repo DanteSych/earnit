@@ -36,7 +36,7 @@ export default function Tap() {
                         </div>
                     </div>
                     <div className="grid grid-cols-3 gap-x-1.5 my-4">
-                        <div onClick={() => { }} className="cursor-pointer flex items-center space-x-2 justify-center rounded-full w-full min-w-fit bg-white/10 p-2">
+                        <div onClick={() => { router.push('/daily-reward') }} className="cursor-pointer flex items-center space-x-2 justify-center rounded-full w-full min-w-fit bg-white/10 p-2">
                             <div className="w-6 h-6 rounded-full bg-gradient-to-t from-purple-500 to-pink-500 p-0.5">
                                 <Image className="w-full h-full rounded-full" src={calendarImg} alt="" width={100} height={100} />
                             </div>
