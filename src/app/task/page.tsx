@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Navbar from "@/components/Navbar";
-import taskImg from "@/assets/task-fit.png";
+import taskImg from "@/assets/fit/task.png";
 import calendarImg from "@/assets/components/calendar.png";
 import youtubeImg from "@/assets/socmed/youtube.png";
 import twitterImg from "@/assets/socmed/twitter.png";
