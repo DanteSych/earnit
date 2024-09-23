@@ -4,6 +4,7 @@ import Image from "next/image";
 import Navbar from "@/components/Navbar";
 import coinImg from "@/assets/coin.png";
 import energyImg from "@/assets/energy.png";
+import boostImg from "@/assets/boost.png";
 import giftImg from "@/assets/components/gift.png";
 import calendarImg from "@/assets/components/calendar.png";
 import coinsImg from "@/assets/components/coin.png";
@@ -51,23 +52,31 @@ export default function Tap() {
                             </div>
                         </div>
                     </div>
-                    <Image src={coinImg} alt="" width={500} height={500} />
+                    <div className="w-full flex item-center justify-center">
+                        <Image src={coinImg} alt="" width={500} height={500} />
+                    </div>
                     <div className="mt-2 flex items-center space-x-3 justify-between">
                         <div className="flex items-center space-x-2 justify-center mb-1 rounded-full min-w-fit bg-white/10 p-2">
-                            <div className="w-8 h-8 rounded-full bg-gradient-to-t from-purple-500 to-pink-500 p-1">
-                                <Image className="w-full h-full rounded-full" src={energyImg} alt="" width={100} height={100} />
+                            <div className="relative size-8">
+                                <svg className="size-full -rotate-90" viewBox="0 0 36 36" xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="18" cy="18" r="16" fill="none" className="stroke-current text-gray-200" stroke-width="3.5"></circle>
+                                    <circle cx="18" cy="18" r="16" fill="none" className="stroke-current text-yellow-600" stroke-width="3.5" stroke-dasharray="100" stroke-dashoffset="75" stroke-linecap="round"></circle>
+                                </svg>
+                                <div className="absolute top-1/2 start-1/2 transform -translate-y-1/2 -translate-x-1/2">
+                                    <Image className="w-full h-full rounded-full" src={energyImg} alt="" width={100} height={100} />
+                                </div>
                             </div>
                             <div className="pr-1.5">
-                                <p className="font-bold leading-none">10,000</p>
+                                <p className="font-bold leading-none">Boost</p>
                                 <p className="text-xs text-gray-400">Taps</p>
                             </div>
                         </div>
-                        <div className="w-full h-full">
-                            <p className="text-xs text-gray-400 mb-1">Remaining:</p>
-                            <div className="bg-white/10 rounded-full p-2">
-                                <div className="w-full bg-gray-200 rounded-full h-2.5">
-                                    <div className="bg-[#ff9f00] h-2.5 rounded-full" style={{ width: '100%' }}></div>
-                                </div>
+                        <div onClick={() => { router.push('/boost') }} className="cursor-pointer flex items-center space-x-2 justify-center mb-1 rounded-full min-w-fit bg-gradient-to-t from-purple-500 to-pink-500 p-2">
+                            <div className="w-8 h-8 rounded-full bg-white/15 p-1.5">
+                                <Image className="w-full h-full rounded-full" src={boostImg} alt="" width={100} height={100} />
+                            </div>
+                            <div className="pr-1.5">
+                                <p className="font-bold leading-none">Boost</p>
                             </div>
                         </div>
                     </div>
