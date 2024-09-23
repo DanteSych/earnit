@@ -67,13 +67,13 @@ export default function Tap() {
                                 </div>
                             </div>
                             <div className="pr-1.5">
-                                <p className="font-bold leading-none">Boost</p>
+                                <p className="font-bold leading-none">1000</p>
                                 <p className="text-xs text-gray-400">Taps</p>
                             </div>
                         </div>
                         <div onClick={() => { router.push('/boost') }} className="cursor-pointer flex items-center space-x-2 justify-center mb-1 rounded-full min-w-fit bg-gradient-to-t from-purple-500 to-pink-500 p-2">
                             <div className="w-8 h-8 rounded-full bg-white/15 p-1.5">
-                                <Image className="w-full h-full rounded-full" src={boostImg} alt="" width={100} height={100} />
+                                <Image className="w-full h-full" src={boostImg} alt="" width={100} height={100} />
                             </div>
                             <div className="pr-1.5">
                                 <p className="font-bold leading-none">Boost</p>
